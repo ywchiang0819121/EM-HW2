@@ -237,18 +237,7 @@ private: System::Void Input_TextChanged(System::Object^  sender, System::EventAr
 			}
 			if (userCommand[0] == "Newton") {
 				//若變數名稱與指令變數名稱符合
-				if (userCommand->Length < 5) {
-					throw "-Command not finished-";
-				}
-				//定意輸出暫存
-				String^ outputTemp = "";
-				msclr::interop::marshal_context context;
-				std::string formula = context.marshal_as<std::string>(userCommand[1]);
-				//dataManager->setFormula(formula);
-			}
-			if (userCommand[0] == "Steep") {
-				//若變數名稱與指令變數名稱符合
-				if (userCommand->Length < 5) {
+				if (userCommand->Length < 3) {
 					throw "-Command not finished-";
 				}
 				//定意輸出暫存
@@ -258,6 +247,17 @@ private: System::Void Input_TextChanged(System::Object^  sender, System::EventAr
 				//dataManager->setFormula(formula);
 			}
 			if (userCommand[0] == "Quasi") {
+				//若變數名稱與指令變數名稱符合
+				if (userCommand->Length < 3) {
+					throw "-Command not finished-";
+				}
+				//定意輸出暫存
+				String^ outputTemp = "";
+				msclr::interop::marshal_context context;
+				std::string formula = context.marshal_as<std::string>(userCommand[1]);
+				//dataManager->setFormula(formula);
+			}
+			if (userCommand[0] == "Steep") {
 				//若變數名稱與指令變數名稱符合
 				if (userCommand->Length < 5) {
 					throw "-Command not finished-";
